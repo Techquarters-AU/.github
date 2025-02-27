@@ -1,0 +1,9 @@
+# CODEOWNERS
+
+# This file specifies the users or teams responsible for code in the repository.
+# Format: <pattern> <user or team>
+# Example:
+# *.js @username
+# src/ @org/team-name
+
+* @your-github-username

@@ -1,0 +1,50 @@
+name: Issue Templates
+description: Choose a template to create a new issue.
+labels: issue
+blank_issues_enabled: false
+contact_links: [] 
+
+templates:
+  - title: Bug Report
+    description: Report a bug in the project.
+    body:
+      - type: markdown
+        attributes:
+          value: |
+            ## Describe the bug
+            A clear and concise description of what the bug is.
+
+            ## Steps to reproduce
+            Steps to reproduce the behavior:
+
+            1. Go to '...'
+            2. Click on '...'
+            3. Scroll down to '...'
+            4. See error
+
+            ## Expected behavior
+            A clear and concise description of what you expected to happen.
+
+            ## Actual behavior
+            A clear and concise description of what actually happened.
+
+      - type: input
+        id: version
+        attributes:
+          label: Version
+          description: What version of the project are you using?
+
+  - title: Feature Request
+    description: Suggest a new feature for the project.
+    body:
+      - type: markdown
+        attributes:
+          value: |
+            ## Feature Description
+            A clear and concise description of the feature you want to propose.
+
+            ## Benefits
+            Explain why this feature is beneficial.
+
+            ## Additional Context
+            Add any other context or screenshots about the feature request here.
