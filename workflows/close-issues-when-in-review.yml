@@ -1,0 +1,31 @@
+name: Close issues when Project Status = In Review
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/10 * * * *" # every 10 minutes
+
+permissions:
+  contents: read
+
+concurrency:
+  group: close-issues-when-in-review
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Close issues in review
+        env:
+          GH_TOKEN: ${{ secrets.PROJECT_AUTOMATION_TOKEN }}
+          ORG: Techquarters-AU
+          PROJECT_NUMBER: "9"
+          STATUS_NAME: "Status"
+          STATUS_VALUE: "In Review"
+        run: |
+          node .github/scripts/close-issues-in-review.mjs
